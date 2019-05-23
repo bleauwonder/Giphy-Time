@@ -1,0 +1,30 @@
+button,
+    div,
+    form,
+    input {
+      margin: 10px;
+      border: none;
+
+    }
+
+body {
+    font-family: 'Cute Font', cursive;
+    font-size: 25px;
+    color: white;
+    background-image: url(../css/dark_wood/dark_wood.png);
+    margin: auto; 
+}
+
+.jumbotron {
+    background-color: rgb(117, 5, 10);
+    color: white;
+
+}
+
+#add-sitcom {
+    background-color: rgb(247, 141, 109);
+}
+
+.sitcom-btn {
+    background-color: rgb(128, 164, 243);
+}
