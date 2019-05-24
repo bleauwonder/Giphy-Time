@@ -4,7 +4,6 @@ button,
     input {
       margin: 10px;
       border: none;
-
     }
 
 body {
@@ -27,4 +26,8 @@ body {
 
 .sitcom-btn {
     background-color: rgb(128, 164, 243);
+}
+
+.sitcom {
+    display: inline-block;
 }
