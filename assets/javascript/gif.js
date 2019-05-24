@@ -44,8 +44,6 @@ function displaySitcom() {
     });
 }
 
-
-
 function renderButtons() {
     $("#buttons-view").empty();
     for (var i = 0; i < topics.length; i++) {
@@ -60,6 +58,7 @@ function renderButtons() {
 $("#add-sitcom").on("click", function(event) {
     event.preventDefault();
     var sitcom = $("#sitcom-input").val().trim();
+    $("#sitcom-input").val('');
     topics.push(sitcom);
     renderButtons();
 });
