@@ -1,3 +1,19 @@
+// Kimmy header gif hover
+$(function() {
+    $("#gif-hover").hide();
+    $("#hover").on("mouseover", function()
+    {
+        $("#hover").hide();
+        $("#gif-hover").show();
+        $("#pic-hover").hide();
+    });
+
+    $("#gif-hover").on("mouseout", function() {
+        $("#hover").show();
+        $("#gif-hover").hide();
+        $("#pic-hover").show();
+    });
+});
 
 // initial Sitcom array
 var topics = ["The Good Place", "The Goldbergs", "Letterkenny", "How I Met Your Mother", "I Love Lucy"];
