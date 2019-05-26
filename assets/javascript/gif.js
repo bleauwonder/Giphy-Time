@@ -4,7 +4,7 @@ var topics = ["The Good Place", "The Goldbergs", "Letterkenny", "How I Met Your 
 
 function displaySitcom() {
     var sitcom = $(this).attr("data-name");
-	console.log("TCL: displaySitcom -> sitcom", sitcom)
+	console.log(sitcom)
     
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sitcom + "&api_key=xQ1cEV48oeuAx0ibvev8eMOowJYJ5xPL&limit=10";
    
@@ -12,7 +12,7 @@ function displaySitcom() {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        console.log("TCL: displaySitcom -> response", response)
+        console.log(response)
         
         for (var i = 0; i < response.data.length; i++) {
         var rating = "Rating: " + (response.data[i].rating).toUpperCase();
@@ -31,7 +31,7 @@ function displaySitcom() {
 
         $(gifImage).on("click", function(event) {
             var state = $(this).attr("state");
-            // var source = $(this).attr("src");
+           
             if (state === "still") {
                 $(this).attr("src", $(this).attr("active"));
                 $(this).attr("state", "active"); 
@@ -46,7 +46,40 @@ function displaySitcom() {
     });
 }
 
-function renderButtons() {
+function displayInfo() {
+    var info = $(this).attr("data-info");
+    console.log(info);
+
+    var infoURL = "https://www.omdbapi.com/?t=" + info + "&apikey=3eee97fa";
+
+    $.ajax({
+        url: infoURL,
+        method: "GET"
+    }).then(function(about) {
+        console.log(about);
+
+        var infoDiv = $("<div class='about'>");
+        var release = about.Released;
+        var pOne = $("<p mb-0>").text("Released: " + release);
+        infoDiv.append(pOne);
+
+        var writer = about.Writer;
+        var pTwo = $("<p>'").text("Writer: " + writer);
+        infoDiv.append(pTwo);
+
+        var actors = about.Actors;
+        var pThree = $("<p>").text("Actors: " + actors);
+        infoDiv.append(pThree);
+
+        var plot = about.Plot;
+        var pFour = $("<p>").text("Plot: " + plot);
+        infoDiv.append(pFour);
+
+        $("#sitcom-view").prepend(infoDiv);
+    });
+}
+
+function makeGifButton() {
     $("#buttons-view").empty();
     for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
@@ -57,15 +90,23 @@ function renderButtons() {
     }
 }
 
+
+
+function displayAll() {
+    displaySitcom();
+    displayInfo();
+}
+
 $("#add-sitcom").on("click", function(event) {
     event.preventDefault();
     var sitcom = $("#sitcom-input").val().trim();
     $("#sitcom-input").val('');
     topics.push(sitcom);
-    renderButtons();
+    makeGifButton();
 });
 
+$(document).on("click", ".sitcom-btn", displayAll);
+$(document).on("click", ".about-sitcom", displayAll);
+makeGifButton();
 
-$(document).on("click", ".sitcom-btn", displaySitcom);
-renderButtons();
 
