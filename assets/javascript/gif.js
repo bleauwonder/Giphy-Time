@@ -1,3 +1,4 @@
+
 // initial Sitcom array
 var topics = ["The Good Place", "The Goldbergs", "Letterkenny", "How I Met Your Mother", "I Love Lucy"];
 
@@ -6,7 +7,7 @@ function displaySitcom() {
 	console.log("TCL: displaySitcom -> sitcom", sitcom)
     
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + sitcom + "&api_key=xQ1cEV48oeuAx0ibvev8eMOowJYJ5xPL&limit=10";
-
+   
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -24,13 +25,13 @@ function displaySitcom() {
         gifImage.attr({"active": active, "still": still, "src": still, "state": "still"});
 
         var ratingAndImage = $("<div id='ratingAndImage'>");
-        
+
         $(ratingAndImage).prepend(ratingDiv, gifImage);
         $("#sitcom-view").prepend(ratingAndImage);
 
         $(gifImage).on("click", function(event) {
             var state = $(this).attr("state");
-            var source = $(this).attr("src");
+            // var source = $(this).attr("src");
             if (state === "still") {
                 $(this).attr("src", $(this).attr("active"));
                 $(this).attr("state", "active"); 
@@ -40,6 +41,7 @@ function displaySitcom() {
                 $(this).attr("state", "still");
             }
         });
+
         }
     });
 }
@@ -63,5 +65,7 @@ $("#add-sitcom").on("click", function(event) {
     renderButtons();
 });
 
+
 $(document).on("click", ".sitcom-btn", displaySitcom);
 renderButtons();
+

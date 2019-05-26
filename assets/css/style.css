@@ -35,3 +35,10 @@ body {
 #ratingAndImage {
     float: left;
 }
+
+#ratingDiv {
+    text-align: center;
+    font-size: 20px;
+    width: 200;
+    display: block;
+}
