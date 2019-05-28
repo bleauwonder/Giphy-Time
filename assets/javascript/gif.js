@@ -1,3 +1,4 @@
+$( document ).ready(function() {
 // Kimmy header gif hover
 $(function() {
     $("#gif-hover").hide();
@@ -91,7 +92,7 @@ function displayInfo() {
         var pFour = $("<p>").text("Plot: " + plot);
         infoDiv.append(pFour);
 
-        $("#sitcom-view").prepend(infoDiv);
+        $("#info-view").prepend(infoDiv);
     });
 }
 
@@ -101,16 +102,10 @@ function makeGifButton() {
         var a = $("<button>");
         a.addClass("sitcom-btn");
         a.attr("data-name", topics[i]);
+        a.attr("data-info", topics[i]);
         a.text(topics[i]);
         $("#buttons-view").append(a);
     }
-}
-
-
-
-function displayAll() {
-    displaySitcom();
-    displayInfo();
 }
 
 $("#add-sitcom").on("click", function(event) {
@@ -121,8 +116,8 @@ $("#add-sitcom").on("click", function(event) {
     makeGifButton();
 });
 
-$(document).on("click", ".sitcom-btn", displayAll);
-$(document).on("click", ".about-sitcom", displayAll);
+$(document).on("click", ".sitcom-btn", displaySitcom);
+$(document).on("click", ".sitcom-btn", displayInfo);
 makeGifButton();
 
-
+});

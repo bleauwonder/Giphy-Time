@@ -18,9 +18,12 @@ body {
 .jumbotron {
     background-color: rgb(117, 5, 10);
     color: white;
-
 }
 
+.gif-info-container {
+    display: inline-block;
+    width: 100%;
+}
 #add-sitcom {
     background-color: rgb(247, 141, 109);
 }

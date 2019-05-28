@@ -11,38 +11,31 @@
     <title>GifTastic</title>
 </head>
 <body>
-    <div class="container">
-            <div class="jumbotron p-1 m-1 shadow-sm">
-
-                    <h1 class="bigTitle text-center">
-                      <strong class="headline display-1 p-1">I Love Sitcoms</strong>
-                      <!-- <div class="wrapper"> -->
-                          
-                            <img id="pic-hover" src="https://media2.giphy.com/media/18pjPEqqIt2k8/giphy_s.gif" />
-                            <img id="gif-hover" src="https://media.giphy.com/media/18pjPEqqIt2k8/giphy.gif" />
-                            <button id="hover">Hover</button>
-                         
-                      <!-- </div> -->
-                      <!-- <img class="play-gif"
-                      src="https://media.giphy.com/media/18pjPEqqIt2k8/giphy.gif" alt="Kimmy Schmidt" height="150"> -->
-                    </h1>
-            </div>
+  <div class="container">
+    <div class="jumbotron p-1 m-1 shadow-sm">
+      <h1 class="bigTitle text-center">
+        <strong class="headline display-1 p-1">I Love Sitcoms</strong>
+          <img id="pic-hover" src="https://media2.giphy.com/media/18pjPEqqIt2k8/giphy_s.gif"/>
+          <img id="gif-hover" src="https://media.giphy.com/media/18pjPEqqIt2k8/giphy.gif" />
+            <button id="hover">Hover</button>
+      </h1>
+    </div>
                   
-            <div id="buttons-view"></div>
-                <form id="sitcom-form">
-                    <label for="sitcom-input text-light display-4">Add a Sitcom!</label>
-                        <input type="text" id="sitcom-input">
-                            <input id="add-sitcom" type="submit" value="Fav Sitcom">
-                </form>
+    <div id="buttons-view"></div>
+      <form id="sitcom-form">
+        <label for="sitcom-input text-light display-4">Add a Sitcom!</label>
+          <input type="text" id="sitcom-input">
+            <input id="add-sitcom" type="submit" value="Fav Sitcom">
+      </form>
       
-          <div id="sitcom-view"></div>
-    </div>
+          <div class="gif-info-container">
+            <div id="info-view"></div>
+              <div id="sitcom-view"></div>
+          </div>
   
-    
-
-
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script type="text/javascript" src="assets/javascript/gif.js"></script>
-    </div>
+  </div>
 </body>
 </html>
