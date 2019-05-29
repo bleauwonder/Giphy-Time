@@ -58,7 +58,6 @@ function displaySitcom() {
                 $(this).attr("state", "still");
             }
         });
-
         }
     });
 }
