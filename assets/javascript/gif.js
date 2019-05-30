@@ -30,7 +30,7 @@ function displaySitcom() {
         method: "GET"
     }).then(function(response) {
         console.log(response)
-        
+        var gifInfo = $("<div id='abc'>");
         for (var i = 0; i < response.data.length; i++) {
         var rating = "Rating: " + (response.data[i].rating).toUpperCase();
         var active = response.data[i].images.fixed_width.url;
@@ -44,8 +44,8 @@ function displaySitcom() {
         var ratingAndImage = $("<div id='ratingAndImage'>");
 
         $(ratingAndImage).prepend(ratingDiv, gifImage);
-        $("#sitcom-view").prepend(ratingAndImage);
-
+        $(gifInfo).prepend(ratingAndImage);
+        
         $(gifImage).on("click", function(event) {
             var state = $(this).attr("state");
            
@@ -59,6 +59,7 @@ function displaySitcom() {
             }
         });
         }
+        $(".gif-info-container").prepend(gifInfo);
     });
 }
 
@@ -91,9 +92,12 @@ function displayInfo() {
         var pFour = $("<p>").text("Plot: " + plot);
         infoDiv.append(pFour);
 
-        $("#info-view").prepend(infoDiv);
+        $(".gif-info-container").prepend(infoDiv);
     });
 }
+  
+
+   
 
 function makeGifButton() {
     $("#buttons-view").empty();

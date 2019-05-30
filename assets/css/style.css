@@ -37,8 +37,11 @@ body {
     display: inline-block;
 }
 
-#ratingAndImage {
-    float: left;
+#abc {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 #ratingDiv {
@@ -55,16 +58,16 @@ body {
   
 #pic-hover {
     /* position: relative; */
-    width: 250px;
-    height: 200px;
+    width: 30%;
+    /* height: 200px; */
     top: 60px;
     display: inline-block;
   }
   
 #gif-hover {
     /* position: relative; */
-    width: 250px;
-    height: 200px;
+    width: 30%;
+    /* height: 200px; */
     top: 60px;
     display: inline-block;
   }
