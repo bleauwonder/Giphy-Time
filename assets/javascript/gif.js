@@ -60,6 +60,7 @@ function displaySitcom() {
         });
         }
         $(".gif-info-container").prepend(gifInfo);
+    
     });
 }
 
